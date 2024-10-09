@@ -1,9 +1,12 @@
+import { FlipWords } from "@/components/ui/flip-words";
+
 export default function Home() {
+  const words: string[] = ["Alcohol","Meth","Cocaine","Ice"]
     return (
       <div className="bg-fixed bg-[url('/Drugs.jpg')] bg-no-repeat bg-cover ">
         <div className="bg-blue-500 opacity-40"></div>
         <div className="pt-20 flex flex-col justify-center ">  {/*bg-gray-500 opacity-25*/}
-            <p className="text-white font-bold text-7xl text-center">Substance Abuse</p>
+            <p className="text-white font-bold text-7xl text-center"><FlipWords words={words} className="text-white z-0"/>Abuse</p>
             <p className=" pt-2 text-white text-center">
                 Is the use of a drug in amounts or by methods that are harmful to the individual or others, and differs from addiction. <br/>
                 Many people with substance abuse problems are able to quit or can change their unhealthy behavior. <br/>

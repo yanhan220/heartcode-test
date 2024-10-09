@@ -6,9 +6,11 @@ import Catglasses from "@/app/assets/glasses.jpg";
 import Cathiding from "@/app/assets/hiding.jpg";
 import Catlooking from "@/app/assets/looking.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+// import { AuroraBackground } from "@/components/ui/aurora-background";
+
 
 export default function AboutMe() {
-  return (
+    return (
     <div className="p-5">
         Hello world this is the about me route
         <Card>
