@@ -6,6 +6,7 @@ import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
 import { toast, useToast } from "@/hooks/use-toast"
+import { insertOneUser } from "../server/user"
 
 import {
   Form,
@@ -54,19 +55,25 @@ export default function Quiz(){
 
       // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
+    let isEducated=false;
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
     toast({title:"bitch"})
     if (values.answer1=="no" && values.answer2=="yes"){
+      isEducated = true;
       toast({title: `Congratulations ${values.username}`,
         description: "You are educated on substance abuse",
     })}
- else {
+
+    else {
     toast({
         title: `Thank you ${values.username}`,
         description: "Unfortunately you are not educated on substance abuse",})
     }
+
+    insertOneUser(values.username,isEducated)
+
     } 
 
     return(

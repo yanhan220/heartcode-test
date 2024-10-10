@@ -1,6 +1,7 @@
 import { ModeToggle } from "../mode-toggle";
 import { NavigationMenu } from "../ui/navigation-menu";
 import { NavigationItem, NavItem } from "./navigation-item";
+import { ThemeProvider } from "../theme-provider";
 
 import {
     ClerkProvider,
@@ -10,15 +11,19 @@ import {
     UserButton
   } from '@clerk/nextjs'
 
+import { useTheme } from "next-themes";
+
 const navItems: NavItem[] = [
 	{ navigationLink: "/", navigationDescription: "Home" },
 	{ navigationLink: "/quiz", navigationDescription: "Quiz" },
 	{ navigationLink: "/about-me", navigationDescription: "About Me" },
 ]
 
+
 export default function NavigationBar() {
 	return (
-    	<NavigationMenu className="sticky top-0 list-none flex justify-between min-w-full h-[60px] bg-black px-5">
+        
+    	<NavigationMenu className="sticky top-0 list-none flex justify-between min-w-full h-[60px] bg-background px-5">
         	<div className="flex flex-row justify-start gap-4">
             	{navItems.map((navItem, index) => <NavigationItem key={index} navigationLink={navItem.navigationLink} navigationDescription={navItem.navigationDescription} />)}
         	</div>
